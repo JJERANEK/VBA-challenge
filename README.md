@@ -34,6 +34,7 @@ Sub Stocks()
     
     
 'Tickers and Volume
+
     For Row = 2 To lRow
         If Cells(Row + 1, 1).Value <> Cells(Row, 1).Value Then
             Ticker = Cells(Row, 1).Value
@@ -50,6 +51,7 @@ Sub Stocks()
     
     
 'Yearly Change
+
     New_Table_Row = 2
             
     For Row = 2 To lRow
