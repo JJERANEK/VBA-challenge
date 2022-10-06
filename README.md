@@ -21,6 +21,8 @@ Sub Stocks()
     New_Table_Row = 2
     Total_Stock_Volume = 0
     lRow = Cells(Rows.Count, 1).End(xlUp).Row
+    
+'Creates the headers for new columns and sets them to autofit    
    
     Range("I1, P1").Value = "Ticker"
     Range("J1").Value = "Yearly Change"
@@ -101,6 +103,8 @@ Sub Stocks()
             Range("P4").Value = Cells(Row, "I").Value
         End If
     Next Row
+   
+'Changes cells color dependent on whether value is positive or negative   
    
    For Row = 2 To lRow
         If IsEmpty(Cells(Row, "J").Value) Then Exit For
