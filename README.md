@@ -13,7 +13,9 @@ Sub Stocks()
     Dim Close_Price As Double
     Dim Yearly_Change As Double
     Dim WS As Worksheet
-         
+
+
+'Loops through each sheet
    For Each WS In Sheets
     WS.Activate
     New_Table_Row = 2
@@ -75,6 +77,8 @@ Sub Stocks()
       
     Next Row
    
+  'Finds values for max percentage, min percentage, and max volume 
+   
     Max_Percent = WorksheetFunction.Max(ActiveSheet.Columns("K"))
     Min_Percent = WorksheetFunction.Min(ActiveSheet.Columns("K"))
     Max_Volume = WorksheetFunction.Max(ActiveSheet.Columns("L"))
@@ -84,6 +88,9 @@ Sub Stocks()
     Range("Q3").Value = Min_Percent
     Range("Q3").NumberFormat = "0.00%"
     Range("Q4").Value = Max_Volume
+    
+    
+'Places max percentage, min percentage, and max volume values into their appropriate cells    
     
     For Row = 2 To lRow
         If Max_Percent = Cells(Row, "K").Value Then
